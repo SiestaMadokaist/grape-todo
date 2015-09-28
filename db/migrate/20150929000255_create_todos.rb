@@ -6,7 +6,7 @@ class CreateTodos < ActiveRecord::Migration
             t.string(:title)
             t.text(:detail)
             t.datetime(:deadline)
-            t.boolean(:is_done)
+            t.boolean(:is_done, default: false, null: false)
         end
     end
 

@@ -30,6 +30,11 @@ dirs.each{|s| Dir[s].each{|f| require f} }
 
 class API::Root < Grape::API
     format(:json)
+    before do
+        header["Access-Control-Allow-Origin"] = headers["Origin"]
+        header["Access-Control-Allow-Headers"] = headers["Access-Control-Request-Headers"]
+        header["Access-Control-Allow-Methods"] = "GET, POST, PUT, PATCH, DELETE, OPTIONS, HEAD"
+    end
 
     namespace(:v0) do
         namespace(:mobile) do
@@ -52,6 +57,11 @@ class API::Root < Grape::API
         api_version: "v0",
         mount_path: "/api/docs"
     )
+
+    options '/(*:url)', anchor: false do
+        headers
+    end
+
 end
 
 ApplicationServer = Rack::Builder.new do

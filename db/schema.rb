@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(:version => 20150929000255) do
     t.string   "title"
     t.text     "detail"
     t.datetime "deadline"
-    t.boolean  "is_done"
+    t.boolean  "is_done",    :default => false, :null => false
   end
 
 end
