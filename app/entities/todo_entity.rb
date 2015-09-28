@@ -4,7 +4,7 @@ class API::Entities::TodoEntity
         def self._id
         end
 
-        expose(:name, documentation: {type: "String", desc: "#TODO"})
+        expose(:title, documentation: {type: "String", desc: "#TODO"})
         expose(:deadline, documentation: {type: "Integer", desc: "timestamp in second"})
         expose(:time_left, documentation: {type: "Integer", desc: "in second"})
         expose(:is_done, documentation: {type: "Boolean", desc: "#TODO"})

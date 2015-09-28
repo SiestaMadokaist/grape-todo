@@ -7,8 +7,9 @@ class API::V0::Mobile::Todo < API::V0::Mobile::Base
             http_codes: [ API::Error403, API::Error500 ].map(&:http_codes)
         )
         params do
-            requires(:name, desc: "the todo name", type: String)
+            requires(:title, desc: "the todo name", type: String)
             requires(:deadline, desc: "the time limit in timestamp", type: Integer)
+            optional(:detail, desc: "detail of the task", type: String)
         end
         post("/") do
             binding.pry
