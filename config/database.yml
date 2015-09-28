@@ -1,0 +1,35 @@
+development:
+    adapter: mysql2
+    encoding: utf8
+    pool: 32
+    database: <%= ENV["TODO_DB_DEV"] %>
+    username: <%= ENV["TODO_USER_DEV"] %>
+    password: <%= ENV["TODO_PASS_DEV"] %>
+    host: <%= ENV["TODO_HOST_DEV"] %>
+    port: 3306
+    reconnect: true
+    reaping_frequency: 5
+
+production:
+    adapter: mysql2
+    encoding: utf8
+    pool: 32
+    database: <%= ENV["TODO_DB_PRODUCTION"] %>
+    username: <%= ENV["TODO_USER_PRODUCTION"] %>
+    password: <%= ENV["TODO_PASS_PRODUCTION"] %>
+    host: <%= ENV["TODO_HOST_PRODUCTION"] %>
+    port: 3306
+    reconnect: true
+    reaping_frequency: 5
+
+spec:
+    adapter: mysql2
+    encoding: utf8
+    pool: 32
+    database: <%= ENV["TODO_DB_SPEC"] %>
+    username: <%= ENV["TODO_USER_SPEC"] %>
+    password: <%= ENV["TODO_PASS_SPEC"] %>
+    host: <%= ENV["TODO_HOST_SPEC"] %>
+    port: 3306
+    reconnect: true
+    reaping_frequency: 5
