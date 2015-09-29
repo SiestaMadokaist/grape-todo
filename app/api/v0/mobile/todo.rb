@@ -28,10 +28,9 @@ class API::V0::Mobile::Todo < API::V0::Mobile::Base
         params do
             optional(:page, type: Integer, default: 1)
             optional(:per_page, type: Integer, default: 10)
-            optional(:in_timestamp, type: Integer, default: 0)
         end
         get("/") do
-            API::Entities::TodoEntity::Basic.represent(Todo.first(10), root: "todos", in_timestamp: params[:in_timestamp])
+            API::Entities::TodoEntity::Basic.represent(Todo.first(10), root: "todos")
         end
 
         # PATCH /:todo_id/done

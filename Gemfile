@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 gem 'puma'
 gem 'rack'
 
-gem 'mysql2'
+gem 'mysql2', '0.3.16'
 gem 'activerecord', "~> 3.2.11", require: "active_record"
 
 gem 'grape'
