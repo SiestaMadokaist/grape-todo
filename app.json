@@ -1,0 +1,6 @@
+{
+  "name": "Grape Todo",
+  "description": "Sample barebone API server with docker and grape framework",
+  "repository": "https://github.com/SiestaMadokaist/grape-todo",
+  "image": "heroku/ruby"
+}
