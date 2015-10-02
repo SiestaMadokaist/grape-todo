@@ -18,7 +18,7 @@ production:
     username: <%= ENV["TODO_USER_PRODUCTION"] %>
     password: <%= ENV["TODO_PASS_PRODUCTION"] %>
     host: <%= ENV["TODO_HOST_PRODUCTION"] %>
-    port: 3306
+    port: <%= ENV["TODO_DB_PORT"] %>
     reconnect: true
     reaping_frequency: 5
 
