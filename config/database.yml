@@ -1,5 +1,5 @@
 development:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     pool: 32
     database: <%= ENV["TODO_DB_DEV"] %>
@@ -11,7 +11,7 @@ development:
     reaping_frequency: 5
 
 production:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     pool: 32
     database: <%= ENV["TODO_DB_PRODUCTION"] %>
@@ -23,7 +23,7 @@ production:
     reaping_frequency: 5
 
 spec:
-    adapter: mysql2
+    adapter: postgresql
     encoding: utf8
     pool: 32
     database: <%= ENV["TODO_DB_SPEC"] %>
