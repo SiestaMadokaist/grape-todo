@@ -1,19 +1,27 @@
 web:
   build: .
-  command: 'bash -c ''bundle exec puma -C config/puma.rb'''
+  command: 'bash -c ''bundle exec puma'''
   working_dir: /app/user
   environment:
-    PORT: 9292
+   PORT: 8080
+   DATABASE_URL: 'postgres://xopatxircfswkr:_EVdFnulLKlOtIv411LWtpD-xb@ec2-54-83-29-15.compute-1.amazonaws.com:5432/dc99s8scbrofc5'
   ports:
-    - '9292:9292'
+    - '8080:8080'
+  links:
+    - herokuPostgresql
 shell:
   build: .
   command: bash
   working_dir: /app/user
   environment:
-    PORT: 9292
+    PORT: 8080
+    DATABASE_URL: 'postgres://xopatxircfswkr:_EVdFnulLKlOtIv411LWtpD-xb@ec2-54-83-29-15.compute-1.amazonaws.com:5432/dc99s8scbrofc5'
   ports:
-    - '9292:9292'
+    - '8080:8080'
+  links:
+    - herokuPostgresql
   volumes:
     - '.:/app/user'
+herokuPostgresql:
+  image: postgres
 

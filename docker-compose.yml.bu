@@ -1,0 +1,19 @@
+web:
+  build: .
+  command: 'bash -c ''bundle exec puma -C config/puma.rb'''
+  working_dir: /app/user
+  environment:
+    PORT: 9292
+  ports:
+    - '9292:9292'
+shell:
+  build: .
+  command: bash
+  working_dir: /app/user
+  environment:
+    PORT: 9292
+  ports:
+    - '9292:9292'
+  volumes:
+    - '.:/app/user'
+
